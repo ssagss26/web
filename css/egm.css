@@ -904,7 +904,7 @@ a.top_btn {
     position: fixed;
     top: 50%;
     right: 45px;
-    z-index: 99;
+    z-index: 1000;
     transform: translateY(-50%)
 }
 
