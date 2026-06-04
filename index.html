@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes">
+
+<title>이지엠시스템즈</title>
+
+<link rel="shortcut icon" href="images/include/favicon.ico">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"><!--메뉴부트스트랩 CSS 제일 위에 있어야함-->
+<link rel="stylesheet" type="text/css" href="css/swiper-bundle.min.css"><!--메인상단애니메이션-->
+<link rel="stylesheet" type="text/css" href="css/menu.css"><!--메뉴-->
+<link rel="stylesheet" type="text/css" href="css/egm.css"><!--공통/디자인-->
+<link rel="stylesheet" type="text/css" href="css/fonts.css"><!--폰트-->
+
+<script src="js/jquery-3.7.1.min.js"></script><!--공통필수-->
+<script src="js/common.js"></script><!--공통필수/메인스크롤링-->
+
+</head>
+<body>
+
+<header id="hd">
+	<div class="container container-fluid">
+		<h1 class="hd-logo text-hide"><a href="index.html">로고</a></h1>
+
+		<button type="button" class="js-mn d-xl-none"><span>Open / Close menu</span></button><!--전체메뉴열기닫기-->
+
+		<nav id="gnb">		
+			<!--모바일-->
+			<div class="gnb-util">
+			<p class="mo_menu_title">전체메뉴</p>
+			<!--
+			<a href="/member/login.asp">로그인</a><i class="split"></i>
+			<a href="/member/join_1.asp">회원가입</a><i class="split"></i>
+			<a href="#;">로그아웃</a><i class="split"></i>
+			<a href="/member/edit.asp">회원정보수정</a><i class="split"></i>
+			-->
+			</div>
+			<!--//모바일-->
+
+			<ul class="navbar-nav">
+			<li class="nav-item"><a href="sub_01.html">Business Overview</a></li>
+			<li class="nav-item"><a href="sub_02.html">System Integration</a></li>
+			<li class="nav-item"><a href="sub_03.html">AV & Monitoring System</a></li>
+			<li class="nav-item"><a href="sub_04.html">Maintenance & Others</a></li>
+			<li class="nav-item"><a href="sub_05.html">References</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<!--메인용(이 위치에 있어야 함)-->
+<script src="js/bootstrap.bundle.min.js"></script><!--메인스크롤링/메인에서만 사용(서브에 있으면 상하스크롤 안됨)-->
+<script src="js/swiper.jquery.min.js"></script><!--메인스크롤링/메인에서만 사용-->
+<script src="js/main.js"></script><!--메인스크롤링-->
+<script src="js/gsap.min.js"></script><!--메인상단애니메이션-->
+<script src="js/swiper-bundle.min.js"></script><!--메인상단애니메이션-->
+<!--//메인용-->
+
+<!--+++++전체+++++-->
+<div id="wrap"><!--현재 prop = w.width() > 1200 으로 1200이상만 스클롤링 적용되어있음, main.js-->
+
+<!--메인섹션-->
+<section id="ct">
+
+<!--섹션1-->
+<section id="section1" class="section-main-visual">
+	<div class="swiper">
+       
+		<!--메인비주얼-->
+		<div class="swiper-wrapper">
+
+			<div class="swiper-slide">
+				<div class="background bg1"></div><!--css파일에 pc,mo 각각노출-->
+				<div class="inner">
+					<div class="text-wrap">
+						<p class="text">
+							“1A Company of Trust · Passion · Challenge”
+						</p>
+						<p class="title">						
+							EGM Systems,<br/>
+							Committed to<br/>
+							Customer Satisfaction
+						</p>
+						<!-- <p class="view"><a href="" class="more">View More</a></p> -->
+					</div>
+				</div>
+			</div>
+			
+			<div class="swiper-slide">
+				<div class="background bg2"></div><!--css파일에 pc,mo 각각노출-->
+				
+				<div class="inner">
+					<div class="text-wrap">
+						<p class="text">
+							“A Company of Trust · Passion · Challenge”
+						</p>
+						<p class="title">						
+							EGM Systems,<br/>
+							Committed to<br/>
+							Customer Satisfaction
+						</p>
+						<!-- <p class="view"><a href="" class="more">View More</a></p> -->
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!--//메인비주얼-->
+		
+		<!--좌우스와이프-->
+		<div class="swiper_arrow_wrap">
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>
+		</div>
+		<!--//좌우스와이프-->
+
+		<!--하단스와이프로딩 및 페이징-->
+		<div class="control">
+			<div class="control-wrap">
+				
+				<button class="toggle" type="button" data-state="play">
+					<svg x="0px" y="0px" viewBox="0 0 59.3 59.3">
+						<circle cx="29.6" cy="29.6" r="28.1" stroke="#c9c9c9" fill-opacity="0" stroke-width="3" stroke-linecap="round" />
+						<circle class="path" cx="29.6" cy="29.6" r="28.1" stroke="#0084E9" fill-opacity="0" stroke-width="3" stroke-linecap="round" />
+					</svg>
+				</button>
+				<div class="pager-container">
+					<div class="swiper-pagination"></div>
+				</div>
+
+			</div>
+		</div>
+		<!--//하단스와이프로딩 및 페이징-->
+
+	</div>
+
+	<!--메인비주얼-->
+<script>
+// 메인비주얼
+const visualTime = 5000;
+const visualSpeed = 1000;
+const visualSection = document.querySelector('.section-main-visual');
+const visualCircle = document.querySelector('.section-main-visual .swiper .path');
+const visualToggle = document.querySelector('.section-main-visual .control .toggle');
+const tl = gsap.timeline({ paused: true });
+tl.fromTo(visualCircle, { strokeDashoffset: 250 }, { duration: (visualTime + visualSpeed + 1000) / 1000, ease: 'none', strokeDashoffset: 0 });
+
+window.addEventListener('resize', () => {
+	setVisual();
+});
+window.addEventListener('DOMContentLoaded', () => {
+	setVisual();
+});
+
+function setVisual(){
+	visualSection.style.height = window.innerHeight + 'px';
+}
+
+
+const visualSlide = new Swiper('.section-main-visual .swiper', {
+	loop: true,
+	speed: visualSpeed,
+	effect: 'fade',
+	fadeEffect: {
+		crossFade: true
+	},
+	autoplay: {
+        delay: visualTime,
+        disableOnInteraction: false
+    },
+	navigation: {
+	    nextEl: '.section-main-visual .swiper-button-next',
+	    prevEl: '.section-main-visual .swiper-button-prev'
+    },
+	pagination: {
+		el: '.section-main-visual .swiper-pagination',
+		type: 'fraction',
+		clickable: true,
+		renderFraction: function (currentClass, totalClass) {
+			return '<span class="' + currentClass + '"></span> / <span class="' + totalClass + '"></span>';
+		}
+	},
+	on: {
+		init: (swiper) =>{
+			let activeSlide = swiper.el.querySelector('.swiper-slide-active');
+			let activeBackground = activeSlide.querySelector('.background');
+			gsap.to(activeBackground, { duration: (visualTime + visualSpeed) / 1000, ease: 'sine.out', scale: 1 });
+			tl.play();
+		},
+        slideChangeTransitionStart: (swiper) => {
+			animate(swiper);
+        }
+    }
+});
+
+function animate(swiper){
+    let activeSlide = swiper.el.querySelector('.swiper-slide-active');
+    let activeBackground = activeSlide.querySelector('.background');
+    let activeTitle = activeSlide.querySelector('.title');
+    let activeText = activeSlide.querySelector('.text');
+	let activeView = activeSlide.querySelector('.view');
+
+	gsap.set(activeBackground, { scale: 1.5 });
+    gsap.set(activeTitle, { opacity: 0, y: 50 });
+    gsap.set(activeText, { opacity: 0, y: 75 });
+	gsap.set(activeView, { opacity: 0, y: 90 });
+	gsap.to(activeBackground, { duration: (visualTime + visualSpeed) / 1000, ease: 'sine.out', scale: 1 });
+    gsap.to(activeTitle, { delay: 0.5, duration: 1, ease: 'power2.out', opacity: 1, y: 0 });
+    gsap.to(activeText, { delay: 0.5, duration: 1, ease: 'power2.out', opacity: 1, y: 0 });
+	gsap.to(activeView, { delay: 0.5, duration: 1, ease: 'power2.out', opacity: 1, y: 0 });
+
+	tl.restart();
+}
+
+visualToggle.addEventListener('click', (e) => {
+	const button = e.target;
+	if(button.dataset.state === 'play'){
+		button.dataset.state = 'pause';
+		visualSlide.autoplay.pause();
+		tl.pause();
+	}else{
+		button.dataset.state = 'play';
+		visualSlide.autoplay.resume();
+		tl.resume();
+	}
+});
+
+</script>
+<!--//메인비주얼-->
+
+</section>
+<!--//섹션1-->
+
+<!--섹션2-->
+<section id="section2">
+	
+	<div class="swiper_vh nopad">
+
+		<!--섹션컨텐츠-->
+		<div class="si_flex">
+
+			<!--왼쪽-->
+			<div class="left">
+				<h3>System Integration</h3>
+				<a href="sub_02.html" class="btn_square">View More</a>
+			</div>
+			<!--//왼쪽-->
+
+			<!--오른쪽-->
+			<ul class="right">
+				<li>
+					<div class="small_bnr mrg">
+					<h3 class="pc_use">Wireless Network System</h3>
+					<h3 class="mo_use">Wireless Network<br/>System</h3>
+					</div>
+				</li>
+
+				<li>
+					<div class="small_bnr mrg">
+					<h3 class="pc_use">Wired Network System</h3>
+					<h3 class="mo_use">Wired Network<br/>System</h3>
+					</div>
+				</li>
+
+				<li>
+					<div class="small_bnr">
+					<h3>Security System</h3>
+					</div>
+				</li>
+			</ul>
+			<!--//오른쪽-->
+
+		</div>
+		<!--//섹션컨텐츠-->
+
+	</div>
+
+</section>
+<!--//섹션2-->
+
+<!--섹션3-->
+<section id="section3">
+	<div class="swiper_vh">
+
+		<!--섹션컨텐츠-->
+		<div class="res_wrap100 sec_pad_bottom">
+
+		<!--섹션타이틀-->
+		<div class="section_title">
+			<h2>AV & Monitoring System</h2>
+		</div>
+		<!--//섹션타이틀-->
+
+		<!--섹션상세-->
+		<div class="slide_container">
+
+		<button class="slide_btn prev"></button>
+
+		<ul class="slide_wrap">
+			<li>
+				<div class="sec3_card">
+					<div class="picture"><img src="images/main/section3_bg1.png"></div>
+					<div class="text">
+						<p>Display System</p>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="sec3_card">
+					<div class="picture"><img src="images/main/section3_bg2.png"></div>
+					<div class="text">
+						<p>Video Conferencing System</p>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="sec3_card">
+					<div class="picture"><img src="images/main/section3_bg3.png"></div>
+					<div class="text">
+						<p>Stage System</p>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="sec3_card">
+					<div class="picture"><img src="images/main/section3_bg4.png"></div>
+					<div class="text">
+						<p>Studio System</p>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="sec3_card">
+					<div class="picture"><img src="images/main/section3_bg5.png"></div>
+					<div class="text">
+						<p>Public Address System</p>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="sec3_card">
+					<div class="picture"><img src="images/main/section3_bg6.png"></div>
+					<div class="text">
+						<p>Conference Room System</p>
+					</div>
+				</div>
+			</li>
+		</ul>
+
+		<button class="slide_btn next"></button>
+
+		</div>
+		<!--//섹션상세-->
+
+		</div>
+		<!--//섹션컨텐츠-->
+
+	</div>
+
+	<!--더보기버튼-->
+	<div class="btn_more_wrap_center">
+		<a href="sub_03.html" class="btn_square">View More</a>
+	</div>
+	<!--//더보기버튼-->
+
+<script>
+// 섹션3 슬라이드
+document.addEventListener('DOMContentLoaded', () => {
+
+	const sliders = document.querySelectorAll('.slide_container');
+
+	sliders.forEach(slider => {
+
+		const wrap = slider.querySelector('.slide_wrap');
+		const prev = slider.querySelector('.prev');
+		const next = slider.querySelector('.next');
+
+		if (!wrap) return;
+
+		let speed = 3000;
+		let timer;
+		let anim = false;
+
+		const items = [...wrap.children];
+
+		/* 무한 복제 */
+		items.forEach(el => wrap.appendChild(el.cloneNode(true)));
+		items.slice().reverse().forEach(el => {
+			wrap.insertBefore(el.cloneNode(true), wrap.firstChild);
+		});
+
+		let origin = items.length;
+		let index = origin;
+
+		function getWidth() {
+			const item = wrap.children[0];
+			const gap = parseInt(getComputedStyle(wrap).gap) || 0;
+			return item.getBoundingClientRect().width + gap;
+		}
+
+		function move(animate = true) {
+			wrap.style.transition = animate ? 'transform .6s ease' : 'none';
+			wrap.style.transform = `translateX(-${getWidth() * index}px)`;
+		}
+
+		move(false);
+
+		function fixLoop() {
+			if (index >= origin * 2) {
+				index -= origin;
+				move(false);
+			}
+
+			if (index < origin) {
+				index += origin;
+				move(false);
+			}
+		}
+
+		function nextSlide() {
+			if (anim) return;
+
+			anim = true;
+			index++;
+			move(true);
+		}
+
+		function prevSlide() {
+			if (anim) return;
+
+			anim = true;
+			index--;
+			move(true);
+		}
+
+		wrap.addEventListener('transitionend', () => {
+			fixLoop();
+			anim = false;
+		});
+
+		/* autoplay */
+		function start() {
+			timer = setInterval(nextSlide, speed);
+		}
+
+		function stop() {
+			clearInterval(timer);
+		}
+
+		/* buttons */
+		next.onclick = () => {
+			stop();
+			nextSlide();
+			start();
+		};
+
+		prev.onclick = () => {
+			stop();
+			prevSlide();
+			start();
+		};
+
+		/* hover */
+		wrap.onmouseenter = stop;
+		wrap.onmouseleave = start;
+
+		/* drag */
+		let x = 0;
+
+		wrap.onmousedown = e => {
+			x = e.clientX;
+			stop();
+		};
+
+		wrap.onmouseup = e => {
+			let diff = e.clientX - x;
+
+			if (diff > 50) prevSlide();
+			else if (diff < -50) nextSlide();
+
+			start();
+		};
+
+		/* touch */
+		wrap.ontouchstart = e => {
+			x = e.touches[0].clientX;
+			stop();
+		};
+
+		wrap.ontouchend = e => {
+			let diff = e.changedTouches[0].clientX - x;
+
+			if (diff > 50) prevSlide();
+			else if (diff < -50) nextSlide();
+
+			start();
+		};
+
+		start();
+
+	});
+
+});
+</script>
+
+</section>
+<!--//섹션3-->
+
+<!--섹션4-->
+<section id="section4">
+	<div class="swiper_vh">
+
+		<!--섹션컨텐츠-->
+		<div class="res_wrap100 sec_pad_bottom">
+
+		<!--섹션타이틀-->
+		<div class="section_title">
+			<h2>Maintenance & Others</h2>
+		</div>
+		<!--//섹션타이틀-->
+
+		<!--섹션상세-->
+		<ul class="section4_banner">
+			<li><div class="circle icon1"><span class="hidden">아이콘</span></div><p>Operations &<br/>Maintenance</p></li>
+			<li><div class="circle icon2"><span class="hidden">아이콘</span></div><p>Fast Response &<br/>Support</p></li>
+			<li><div class="circle icon3"><span class="hidden">아이콘</span></div><p>Optimized<br/>Infrastructure</p></li>
+			<li><div class="circle icon4"><span class="hidden">아이콘</span></div><p>Cost-Effective<br/>Operations</p></li>
+			<li><div class="circle icon5"><span class="hidden">아이콘</span></div><p>Integrated<br/>Control</p></li>
+			<li><div class="circle icon6"><span class="hidden">아이콘</span></div><p>AI & Big Data<br/>Solutions</p></li>
+		</ul>
+		<!--//섹션상세-->
+
+		</div>
+		<!--//섹션컨텐츠-->
+
+	</div>
+
+	<!--더보기버튼-->
+	<div class="btn_more_wrap_center">
+		<a href="sub_04.html" class="btn_square">View More</a>
+	</div>
+	<!--//더보기버튼-->
+
+</section>
+<!--//섹션4-->
+
+<!--섹션5-->
+<section id="section5">
+	<div class="swiper_vh">
+
+		<!--섹션컨텐츠-->
+		<div class="res_wrap100 sec_pad_bottom">
+
+		<!--섹션타이틀-->
+		<div class="section_title">
+			<h2 class="wh">The Main Partnership</h2>
+		</div>
+		<!--//섹션타이틀-->
+
+		<!--섹션상세-->
+		<div class="section5_con">
+		<ul class="section5_banner">
+			<li><img src="images/main/partner_logo_01.svg"></li>
+			<li><img src="images/main/partner_logo_02.svg"></li>
+			<li><img src="images/main/partner_logo_03.svg"></li>
+			<li><img src="images/main/partner_logo_04.svg"></li>
+			<li><img src="images/main/partner_logo_05.svg"></li>
+			<li><img src="images/main/partner_logo_06.svg"></li>
+			<li><img src="images/main/partner_logo_07.svg"></li>
+			
+		</ul>
+		</div>
+		<!--//섹션상세-->
+
+		</div>
+		<!--//섹션컨텐츠-->
+
+	</div>
+
+</section>
+<!--//섹션5-->
+
+<!--섹션6-->
+<section id="section6">
+	
+	<div class="swiper_vh nopadding"><!--높이 100vh 미적용시 필요없음-->
+		
+	<!--배경-->
+	<div class="section6_bg">
+
+	<!--섹션컨텐츠-->
+	<div class="res_wrap">
+
+	<!--section6 컨텐츠-->
+	<div class="section6_wrap">
+
+	<!--섹션타이틀-->
+	<div class="section_title copy">
+		<h2>
+			<span class="left1">EGM Systems,</span>
+			<span class="left2">Creating Customer Delight</span>
+		</h2>
+	</div>
+	<!--//섹션타이틀-->
+
+	<!--섹션상세-->
+	<ul class="section6_banner">
+		<li><div class="circle icon1"><span class="hidden">아이콘</span></div><p>Business Analysis</p></li>
+		<li><div class="circle icon2"><span class="hidden">아이콘</span></div><p>Structured Execution</p></li>
+		<li><div class="circle icon3"><span class="hidden">아이콘</span></div><p>Reliable Maintenance</p></li>
+
+	</ul>
+	<!--//섹션상세-->
+
+	</div>
+	<!--//section6 컨텐츠-->
+
+	</div>
+	<!--//섹션컨텐츠-->
+
+	</div>
+	<!--//배경-->
+
+<!--푸터-->
+<footer>
+	<!--상단-->
+	<div class="ft_top">
+
+		<!--가운데-->
+		<div class="ft_center">
+		
+			<a href="index.html" class="bottom_logo"><h1 class="hidden">로고</h1></a>
+
+			<!--회사정보-->
+			<div class="ft_info_wrap">
+
+				<div class="line1">
+					<dl class="ft_info none">
+						<dt>Address</dt>
+						<dd>601, 551-24, Yangcheon-ro, Gangseo-gu, Seoul, Republic of Korea (Gayang-dong, Hanwha Biz Metro 2nd)</dd>
+					</dl>
+				</div>
+
+				<div class="line2">
+					<div class="area">
+						<dl class="ft_info">
+							<dt>TEL</dt>
+							<dd>+82-2-583-1020</dd>
+						</dl>
+						<dl class="ft_info none">
+							<dt>FAX</dt>
+							<dd>+82-2-515-1022</dd>
+						</dl>
+					</div>
+				</div>
+
+			</div>
+			<!--//회사정보-->
+
+		</div>
+		<!--//가운데-->
+		
+	</div>
+	<!--//상단-->
+	
+	<!--하단-->
+	<div class="ft_bottom">
+		<div class="ft_center">
+			<p class="copy">Copyrightⓒ All Rights Reserved by EGMSYSTEM Co Limited 2010</p>
+		</div>
+	</div>
+	<!--//하단-->
+
+	<div class="side_btn_wrap">
+	<!--<a href="" target="_blank" class="sns1 side_btn"><span class="hidden">페이스북</span></a>
+	<a href="" target="_blank" class="sns2 side_btn"><span class="hidden">블로그</span></a>
+	<a href="" class="sns3 side_btn"><span class="hidden">Contact US</span></a>-->
+	<a class="top_btn side_btn"><span class="hidden">top</span></a>
+	</div>
+
+	<!--탑으로스크롤-->
+	<script>
+	$(window).scroll(function(){
+				
+	if( $(this).scrollTop() > 100 ){
+	$(".top_btn").addClass("on");
+	}
+	else{
+	$(".top_btn").removeClass("on");
+	}
+				
+	});
+				
+	$(".top_btn").click(function(){
+	window.scrollTo({top : 0, behavior: 'smooth'}); 
+	});
+	</script>
+	<!--//탑으로스크롤-->
+
+</footer>
+<!--//푸터-->
+
+</div>
+</section>
+<!--//섹션6-->
+
+</section>
+<!--//메인섹션-->
+
+</div>
+<!--//+++++전체+++++-->
+
+<!--사이드파랄렉스네비-->
+<nav id="lnb" class="nav d-none d-xl-block">
+	<button type="button" class="nav-link" data-target="#section1"><span class="hidden">섹션1</span></button>
+	<button type="button" class="nav-link" data-target="#section2"><span class="hidden">섹션2</span></button>
+	<button type="button" class="nav-link" data-target="#section3"><span class="hidden">섹션3</span></button>
+	<button type="button" class="nav-link" data-target="#section4"><span class="hidden">섹션4</span></button>
+	<button type="button" class="nav-link" data-target="#section5"><span class="hidden">섹션5</span></button>
+	<button type="button" class="nav-link" data-target="#section6"><span class="hidden">섹션6</span></button>
+</nav>
+<!--//사이드파랄렉스네비-->
+
+</body>
+</html>
+
